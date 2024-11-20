@@ -21,6 +21,8 @@ var header;
 
 var story;
 
+var pic;
+
 
 function preload(){
   charli = loadImage('charlibbs.JPG');
@@ -40,7 +42,7 @@ function draw() {
   if (mode == 'noImage'){
 	  
   }else if(mode =='image'){
-	setBackgroundImage(charli);
+	setBackgroundImage(pic);
   
   	setGradient(0,l-(l/3),w,l/3,color1,color2,Y_AXIS); 
   
@@ -126,6 +128,18 @@ function receiveForm(event){
 	header = document.getElementById('header').value;
 	
 	story = document.getElementById('caption').value.toUpperCase();
+	
+	const file = document.getElementById('picture').files[0];
+	
+	if (file){
+		const reader = new FileReader();
+		
+		reader.onload = function (event){
+			pic = loadImage(event.target.result);
+		};
+		
+		reader.readAsDataURL(file);
+	}
 	
 	mode = 'image';
 	

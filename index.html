@@ -13,11 +13,16 @@
     
 	  <form id="gossipInfo" onsubmit="return receiveForm(event)">
 	  	<label for="paparazzo">PAPARAZZO</label>
-		<input type="text" id="paparazzo" name="paparazzo" maxlength="15">
+		<input type="text" id="paparazzo" name="paparazzo" maxlength="15" required>
 		
 		<label for="celebrity">CELEBRITY</label>
-		<input type="text" id="celebrity" name="celebrity" maxlength="15">
+		<input type="text" id="celebrity" name="celebrity" maxlength="15" required>
 		 
+		 <label for="picture">PICTURE</label>
+		 <input type="file" id="picture" accept="image/*" required>
+		  
+		  
+		  
 		 <label for="header">HEADER</label>	
 		 <select id="header" name="header">
 			<option value="UPDATE">UPDATE</option>
@@ -29,7 +34,7 @@
 		  
 		  
 		<label for="caption">CAPTION</label>  
-		<input type="text" id="caption" name="caption" maxlength="45">
+		<input type="text" id="caption" name="caption" maxlength="45" required>
 		  
 		<button type="submit">CREATE</button>
 	  
