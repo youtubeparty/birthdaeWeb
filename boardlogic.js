@@ -1,3 +1,5 @@
+var mode;
+
 function startTimer(duration,display){
 	var timer = duration;
 	
@@ -17,8 +19,13 @@ function startTimer(duration,display){
 
 window.onload = function(){
 	var display = document.getElementById('countdown');
-	startTimer(60,display);	
-	var template = new Player('ted',10,4);
+	startTimer(60,display);
+	mode = "clout"
+	
+	var t1 = new Player("fart",2,3);
+	var t2 = new Player("Shir",4,5);
+	insertRow(t1);
+	insertRow(t2);
 	
 	
 }
@@ -44,13 +51,32 @@ function Player(id,postsSubmitted,postsAbout){
 	this.clout = 100*(postsSubmitted+postsAbout)+getRandomInt(100);
 	this.socialCredit=getSocialCredit(postsSubmitted,postsAbout);
 		
+}
+
+function insertRow(character){
+	var table = document.getElementById("ranking");
+	
+	var newRow = table.insertRow();
+	newRow.className = "player";
+	
+	var nameCell = newRow.insertCell();
+	nameCell.className = "name";
+	nameCell.textContent = character.name;
 	
 	
-	console.log('got here');
-	console.log(this.name);
-	console.log(this.storiesWritten);
-	console.log(this.starringRoles);
-	console.log(this.clout);
-	console.log(this.socialCredit);
-		
+	var writtenCell = newRow.insertCell();
+	writtenCell.className = "written";
+	nameCell.textContent = character.storiesWritten;
+	
+	var aboutCell = newRow.insertCell();
+	aboutCell.className = "about";
+	nameCell.textContent = character.starringRoles;
+	
+	var scoreCell = newRow.insertCell();
+		scoreCell.className = "score";
+	if(mode == "clout"){
+		scoreCell.textContent = character.clout;
+	}else if(mode == "credit"){
+		scoreCell.textContent = character.socialCredit;
+	}
 }
