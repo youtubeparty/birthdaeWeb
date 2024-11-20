@@ -27,13 +27,13 @@ function Player(id,postsSubmitted,postsAbout){
 	this.name = id;
 	this.storiesWritten = postsSubmitted;
 	this.starringRoles = postsAbout;
-	this.clout = 100*(postsSubmitted+postsAbout)+parseInt(Math.random(100));
+	this.clout = Math.floor(100*(postsSubmitted+postsAbout)+Math.random(100));
 	this.socialCredit=function(){
 		var initvalue = 10*(postsSubmitted*(2*postsAbout));
 		if (initvalue < 0){
-			initvalue = initvalue - parseInt(Math.random(10));
+			initvalue = initvalue - Math.floor(Math.random(10));
 		}else{
-			initvalue = initvalue + parseInt(Math.random(10));
+			initvalue = initvalue + Math.floor(Math.random(10));
 		}
 		return initvalue;
 	}
