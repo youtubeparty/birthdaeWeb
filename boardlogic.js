@@ -38,6 +38,7 @@ function Player(id,postsSubmitted,postsAbout){
 		return initvalue;
 	}
 	
+	console.log('got here');
 	console.log(name,storiesWritten,starringRoles,clout,socialCredit);
 		
 }
