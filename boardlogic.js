@@ -39,6 +39,10 @@ function Player(id,postsSubmitted,postsAbout){
 	}
 	
 	console.log('got here');
-	console.log(name,storiesWritten,starringRoles,clout,socialCredit);
+	console.log(name);
+	console.log(storiesWritten);
+	console.log(starringRoles);
+	console.log(clout);
+	console.log(socialCredit);
 		
 }
