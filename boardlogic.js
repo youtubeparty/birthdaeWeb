@@ -4,6 +4,7 @@ function startTimer(duration,display){
 	setInterval(function(){
 		
 		display.textContent = timer;
+		console.log(timer);
 		
 		if(--timer < 0){
 			timer = duration;
