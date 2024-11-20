@@ -119,7 +119,9 @@ function writeStory(txt){
   
 }
 
-function receiveForm(){
+function receiveForm(event){
+	
+	event.preventDefault();
 	
 	header = document.getElementById('header').value;
 	
