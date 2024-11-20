@@ -18,4 +18,27 @@ function startTimer(duration,display){
 window.onload = function(){
 	var display = document.getElementById('countdown');
 	startTimer(60,display);	
+	var template = new Player('ted',3,4);
+	document.getElementById('name').displayContent = template.name;
+	document.getElementById('written').displayContent = template.storiesWritten;
+	document.getElementById('about').displayContent = template.starringRoles;
+	document.getElementById('score').displayContent = template.clout;
+	
+}
+
+function Player(id,postsSubmitted,postsAbout){
+	this.name = id;
+	this.storiesWritten = postsSubmitted;
+	this.starringRoles = postsAbout;
+	this.clout = 100*(postsSubmitted+postsAbout)+parseInt(Math.random(100));
+	this.socialCredit=function(){
+		var initvalue = 10*(postsSubmitted*(2*postsAbout));
+		if (initvalue < 0){
+			initvalue = initvalue - parseInt(Math.random(10));
+		}else{
+			initvalue = initvalue + parseInt(Math.random(10));
+		}
+		return initvalue;
+	} 
+		
 }
