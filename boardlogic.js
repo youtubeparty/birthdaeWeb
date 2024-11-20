@@ -27,19 +27,23 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-function Player(id,postsSubmitted,postsAbout){
-	this.name = id;
-	this.storiesWritten = postsSubmitted;
-	this.starringRoles = postsAbout;
-	this.clout = 100*(postsSubmitted+postsAbout)+getRandomInt(100);
-	this.socialCredit=function(){
-		var initvalue = 10*(postsSubmitted*(2*postsAbout));
+function getSocialCredit(pS,pA){
+	var initvalue = 10*(pS*(2*pA));
 		if (initvalue < 0){
 			initvalue = initvalue - Math.floor(Math.random(10));
 		}else{
 			initvalue = initvalue + Math.floor(Math.random(10));
 		}
 		return initvalue;
+}
+
+function Player(id,postsSubmitted,postsAbout){
+	this.name = id;
+	this.storiesWritten = postsSubmitted;
+	this.starringRoles = postsAbout;
+	this.clout = 100*(postsSubmitted+postsAbout)+getRandomInt(100);
+	this.socialCredit=getSocialCredit(postsSubmitted,postsAbout);
+		
 	}
 	
 	console.log('got here');
