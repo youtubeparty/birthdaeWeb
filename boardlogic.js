@@ -5,7 +5,7 @@ function startTimer(duration,display){
 		
 		display.textContent = timer;
 		
-		
+		//taking too long to deploy
 		if(--timer < 0){
 			timer = duration;
 		}
