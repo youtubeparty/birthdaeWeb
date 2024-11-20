@@ -130,6 +130,7 @@ function receiveForm(event){
 	story = document.getElementById('caption').value.toUpperCase();
 	
 	const file = document.getElementById('picture').files[0];
+	print(file);
 	
 	if (file){
 		const reader = new FileReader();
