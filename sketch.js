@@ -131,7 +131,7 @@ function receiveForm(event){
 	
 	const file = document.getElementById('picture').files[0];
 	
-	if (file){
+	if (file != null){
 		const reader = new FileReader();
 		
 		reader.onload = function (event){
