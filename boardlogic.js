@@ -18,7 +18,7 @@ function startTimer(duration,display){
 window.onload = function(){
 	var display = document.getElementById('countdown');
 	startTimer(60,display);	
-	var template = new Player('ted',3,4);
+	var template = new Player('ted',10,4);
 	
 	
 }
