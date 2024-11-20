@@ -28,11 +28,11 @@ function getRandomInt(max) {
 }
 
 function getSocialCredit(pS,pA){
-	var initvalue = 10*(pS*(2*pA));
+	var initvalue = 10*(pS-(2*pA));
 		if (initvalue < 0){
-			initvalue = initvalue - Math.floor(Math.random(10));
+			initvalue = initvalue - getRandomInt(10);
 		}else{
-			initvalue = initvalue + Math.floor(Math.random(10));
+			initvalue = initvalue + getRandomInt(10);
 		}
 		return initvalue;
 }
