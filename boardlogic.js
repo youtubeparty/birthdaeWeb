@@ -66,11 +66,11 @@ function insertRow(character){
 	
 	var writtenCell = newRow.insertCell();
 	writtenCell.className = "written";
-	nameCell.textContent = character.storiesWritten;
+	writtenCell.textContent = character.storiesWritten;
 	
 	var aboutCell = newRow.insertCell();
 	aboutCell.className = "about";
-	nameCell.textContent = character.starringRoles;
+	aboutCell.textContent = character.starringRoles;
 	
 	var scoreCell = newRow.insertCell();
 		scoreCell.className = "score";
