@@ -10,6 +10,31 @@
   <body>
     <main>
     </main>
-    <script src="sketch.js"></script>
+    
+	  <form id="gossipInfo" onsubmit="">
+	  	<label for="paparazzo">PAPARAZZO</label>
+		<input type="text" id="paparazzo" name="paparazzo" maxlength="15">
+		
+		<label for="celebrity">CELEBRITY</label>
+		<input type="text" id="celebrity" name="celebrity" maxlength="15">
+		 
+		 <label for="header">HEADER</label>	
+		 <select id="header" name="header">
+			<option value="UPDATE">UPDATE</option>
+			<option value="BREAKING NEWS">BREAKING NEWS</option>
+			<option value="URGENT">URGENT</option>
+			<option value="CELEBRITY SIGHTING">CELEBRITY SIGHTING</option>
+			<option value="THIS BITCH">THIS BITCH</option>
+		</select>
+		  
+		  
+		<label for="caption">CAPTION</label>  
+		<input type="text" id="caption" name="caption" maxlength="50">
+		  
+		<button type="submit">CREATE</button>
+	  
+	  </form>
+	 
+	  <script src="sketch.js"></script>
   </body>
 </html>

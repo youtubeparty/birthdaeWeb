@@ -15,12 +15,20 @@ let color2;
 
 let tSize = 40;
 
+var mode;
+
+var header;
+
+var story;
+
 
 function preload(){
   charli = loadImage('charlibbs.JPG');
   logo = loadImage('birthdaylogowhite.png');
   color1 = color(255);
   color2 = color(0);
+	
+  mode = 'noImage';
 }
 
 function setup() {
@@ -28,14 +36,20 @@ function setup() {
 }
 
 function draw() {
-  setBackgroundImage(charli);
   
-  setGradient(0,l-(l/3),w,l/3,color1,color2,Y_AXIS); 
+  if (mode == 'noImage'){
+	  
+  }else if(mode =='image'){
+	setBackgroundImage(charli);
   
-  placeLogo(logo);
+  	setGradient(0,l-(l/3),w,l/3,color1,color2,Y_AXIS); 
   
-  writeHeader('THIS BITCH');
-  writeStory('HAS LOONEY TUNES BOOBS')
+  	placeLogo(logo);
+  
+  	writeHeader(header);
+  	writeStory(story);
+  }
+  
 }
 
 function setBackgroundImage(img){
@@ -103,4 +117,14 @@ function writeStory(txt){
   
   text(txt,w/2,l*(13/16));
   
+}
+
+function receiveForm(){
+	
+	header = document.getElementById('header').value;
+	
+	story = document.getElementById('caption').value;
+	
+	mode = 'image';
+	
 }
