@@ -44,7 +44,7 @@ function Player(id,postsSubmitted,postsAbout){
 	this.clout = 100*(postsSubmitted+postsAbout)+getRandomInt(100);
 	this.socialCredit=getSocialCredit(postsSubmitted,postsAbout);
 		
-	}
+	
 	
 	console.log('got here');
 	console.log(this.name);
