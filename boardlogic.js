@@ -4,7 +4,7 @@ function startTimer(duration,display){
 	setInterval(function(){
 		
 		display.textContent = timer;
-		console.log(timer);
+		
 		
 		//taking too long to deploy
 		if(--timer < 0){
