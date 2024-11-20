@@ -131,17 +131,20 @@ function receiveForm(event){
 	
 	const file = document.getElementById('picture').files[0];
 	
-	if (file != null){
+	if (file){
 		const reader = new FileReader();
 		
 		reader.onload = function (event){
-			pic = loadImage(event.target.result);
-			print(pic);
+			loadImage(event.target.result, function(loaded) {
+				pic = loaded;
+				mode = 'image';
+			});
+			
 		};
 		
 		reader.readAsDataURL(file);
 	}
 	
-	mode = 'image';
+	
 	
 }
