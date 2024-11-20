@@ -125,7 +125,7 @@ function receiveForm(event){
 	
 	header = document.getElementById('header').value;
 	
-	story = document.getElementById('caption').value;
+	story = document.getElementById('caption').value.toUpperCase();
 	
 	mode = 'image';
 	
