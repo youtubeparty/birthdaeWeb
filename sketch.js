@@ -1,3 +1,5 @@
+import { pushData } from "./awsIntegration";
+
 let charli;
 let logo;
 
@@ -147,6 +149,10 @@ function receiveForm(event){
 		
 		reader.readAsDataURL(file);
 	}
+	
+	paparazzo = document.getElementById("paparazzo").value;
+	celebrity = document.getElementById("celebrity").value;
+	pushData(paparazzo, celebrity);
 	
 	
 	

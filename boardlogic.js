@@ -1,4 +1,4 @@
-import { getData, pushData } from "./awsIntegration";
+import { getData } from "./awsIntegration";
 
 var mode;
 
@@ -94,8 +94,3 @@ function clearTable(){
 	
 }
 
-function onSubmit(){
-	paparazzo = document.getElementById("paparazzo").value;
-	celebrity = document.getElementById("celebrity").value;
-	pushData(paparazzo, celebrity);
-}
