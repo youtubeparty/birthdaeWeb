@@ -12,7 +12,10 @@ function startTimer(duration,display){
 		
 		//taking too long to deploy
 		if(--timer < 0){
-			console.log(getData());
+			
+			
+			console.log(testData());
+			
 			timer = duration;
 		}
 		
@@ -42,6 +45,11 @@ async function getData(){
     const response = await fetch('https://h0fkejytf5.execute-api.us-east-1.amazonaws.com/get_birthdae_rankings');
     const data = response['data'];
     return data;
+}
+
+async function testData(){
+	const response = await getData();
+	return response;
 }
 
 function getRandomInt(max) {
