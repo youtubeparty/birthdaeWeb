@@ -12,6 +12,7 @@ function startTimer(duration,display){
 		
 		//taking too long to deploy
 		if(--timer < 0){
+			console.log(getData());
 			timer = duration;
 		}
 		
@@ -32,7 +33,7 @@ window.onload = function(){
 	
 	insertRow(t2);
 	
-	console.log(getData());
+	
 	
 	
 }
