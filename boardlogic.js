@@ -42,15 +42,14 @@ window.onload = function(){
 
 async function getData(){
     const response = await fetch('https://h0fkejytf5.execute-api.us-east-1.amazonaws.com/get_birthdae_rankings');
-    const data = await response.json();
+    const data = response.json();
     return data;
 }
 
 async function updateboard(){
 	const data = await getData();
-	console.log(data[0]);
-	console.log(data[1]);
-	console.log(data[2]);
+	console.log(data.data[0]);
+	
 }
 
 
