@@ -139,6 +139,7 @@ function receiveForm(event){
 			loadImage(event.target.result, function(loaded) {
 				pic = loaded;
 				mode = 'image';
+				generateName();
 			});
 			
 		};
@@ -148,4 +149,40 @@ function receiveForm(event){
 	
 	
 	
+}
+
+
+function saveCanvasToRemoteServer() {
+  const canvas = document.getElementById('defaultCanvas0'); // Get the canvas element
+  canvas.toBlob((blob) => {
+    const formData = new FormData();
+    formData.append('image', blob, picname);
+
+    fetch('/save-image', { // Replace with your server endpoint
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Image upload failed');
+      }
+      console.log('Image uploaded successfully');
+    })
+    .catch(error => {
+      console.error('Error uploading image:', error);
+    });
+  });
+}
+
+function generateName(){
+	var picname = document.getElementById("header").value + getRandomInt(1000).toString() + ".png";
+	
+	console.log(picname);
+	
+	return picname;
+	
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
 }
