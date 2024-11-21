@@ -139,7 +139,7 @@ function receiveForm(event){
 			loadImage(event.target.result, function(loaded) {
 				pic = loaded;
 				mode = 'image';
-				saveCanvasToRemoteServer();
+				
 				
 			});
 			
@@ -148,12 +148,15 @@ function receiveForm(event){
 		reader.readAsDataURL(file);
 	}
 	
-	
+	if(mode=='image'){
+		saveCanvasToRemoteServer();
+	}
 	
 }
 
 
 function saveCanvasToRemoteServer() {
+  console.log('sending';)
   const canvas = document.getElementById('defaultCanvas0'); // Get the canvas element
   canvas.toBlob((blob) => {
     const formData = new FormData();
