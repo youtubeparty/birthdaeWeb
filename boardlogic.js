@@ -1,4 +1,4 @@
-import { getData } from "./awsIntegration";
+//import { getData } from "./awsIntegration";
 
 var mode;
 
@@ -32,7 +32,7 @@ window.onload = function(){
 	
 	insertRow(t2);
 	
-	console.log(getData());
+	//console.log(getData());
 	
 	
 }
