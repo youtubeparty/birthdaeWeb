@@ -3,6 +3,7 @@
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
+	<script src="boardlogic.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
 
@@ -13,10 +14,10 @@
     
 	  <form id="gossipInfo" onsubmit="return receiveForm(event)" action="updateStats.php">
 	  	<label for="paparazzo">PAPARAZZO</label>
-		<input type="text" id="paparazzo" name="paparazzo" maxlength="15" required>
+		<input type="text" id="paparazzo" name="paparazzo" maxlength="15" value="" required>
 		
 		<label for="celebrity">CELEBRITY</label>
-		<input type="text" id="celebrity" name="celebrity" maxlength="15" required>
+		<input type="text" id="celebrity" name="celebrity" maxlength="15" value="" required>
 		 
 		 <label for="picture">PICTURE</label>
 		 <input type="file" id="picture" accept="image/*" required>
@@ -35,7 +36,7 @@
 		<label for="caption">CAPTION</label>  
 		<input type="text" id="caption" name="caption" maxlength="45" required>
 		  
-		<button type="submit">CREATE</button>
+		<button type="submit" onclick="onSubmit()">CREATE</button>
 	  
 	  </form>
 	  

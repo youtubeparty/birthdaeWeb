@@ -1,3 +1,5 @@
+import { getData, pushData } from "./awsIntegration";
+
 var mode;
 
 function startTimer(duration,display){
@@ -90,4 +92,10 @@ function clearTable(){
 		tb.deleteRow(1);
 	}
 	
+}
+
+function onSubmit(){
+	paparazzo = document.getElementById("paparazzo").value;
+	celebrity = document.getElementById("celebrity").value;
+	pushData(paparazzo, celebrity);
 }
