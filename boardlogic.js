@@ -1,6 +1,7 @@
 //import { getData } from "./awsIntegration";
 
 var mode;
+var 
 
 function startTimer(duration,display){
 	var timer = duration;
@@ -46,8 +47,9 @@ async function getData(){
 }
 
 async function updateboard(){
-	const response = await getData();
-	console.log(response);
+	const data = await getData();
+	const jsData = JSON.parse(data);
+	console.log(jsData);
 }
 
 
