@@ -14,7 +14,7 @@ function startTimer(duration,display){
 		//taking too long to deploy
 		if(--timer < 0){
 			
-			updateBoard
+			updateBoard();
 			timer = duration;
 		}
 		
@@ -71,6 +71,9 @@ async function updateBoard(){
 	
 	clearTable();
 	
+	for(i in players){
+		insertRow(players[i]);
+	}
 	
 }
 
