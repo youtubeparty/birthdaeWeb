@@ -48,7 +48,7 @@ async function getData(){
 }
 
 async function testData(){
-	var response = await getData();
+	var response = await getData().data;
 	return response;
 }
 
