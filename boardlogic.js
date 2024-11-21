@@ -14,7 +14,7 @@ function startTimer(duration,display){
 		//taking too long to deploy
 		if(--timer < 0){
 			
-			processJson();
+			updateBoard
 			timer = duration;
 		}
 		
@@ -36,9 +36,7 @@ window.onload = function(){
 	insertRow(t2);
 	
 	players = [];
-	
-	
-	
+		
 	
 }
 
@@ -51,8 +49,6 @@ async function getData(){
 async function processJson(){
 	const data = await getData();
 	
-	
-	
 	for(let i = 0; i < data.data.length; i++){
 		var temp = data.data[i];
 		players[i] = new Player(temp.player_name,temp.posts_submitted,temp.appearances);
@@ -60,6 +56,35 @@ async function processJson(){
 	
 	console.log(players);
 	
+}
+
+async function updateBoard(){
+	players = [];
+	processJson();
+	
+	
+	if(mode == "clout"){
+		sortClout();
+	}else if(mode == "credit"){
+		sortCredit();
+	}
+	
+	clearTable();
+	
+	
+}
+
+
+function sortClout(){
+	players.sort(function(a,b){
+		return a.clout - b.clout;
+	});
+}
+
+function sortCredit(){
+	players.sort(function(a,b){
+		return a.socialCredit - b.socialCredit;
+	});
 }
 
 

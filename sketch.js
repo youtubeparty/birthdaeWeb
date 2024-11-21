@@ -175,7 +175,7 @@ function receiveForm(event){
 }
 
 async function pushData(paparazzo, celebrity){
-    const url = "https://upmfm7yzu2.execute-api.us-east-1.amazonaws.com/publish_to_birthdae" + new URLSearchParams({
+    const url = "https://upmfm7yzu2.execute-api.us-east-1.amazonaws.com/publish_to_birthdae?" + new URLSearchParams({
         paparazzo: paparazzo,
         celebrity: celebrity,
     });
