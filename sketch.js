@@ -154,7 +154,7 @@ function receiveForm(event){
 					if(saveable){
 						saveCanvasToRemoteServer();
 					}
-				}100);
+				},100);
 				
 				
 			});
