@@ -85,7 +85,7 @@ function insertRow(character){
 function clearTable(){
 	var tb = document.getElementById("ranking");
 	while(tb.rows.length > 1){
-		tb.deleteRows(1);
+		tb.deleteRow(1);
 	}
 	
 }
