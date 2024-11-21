@@ -14,7 +14,7 @@ function startTimer(duration,display){
 		//taking too long to deploy
 		if(--timer < 0){
 			
-			updateboard();
+			processJson();
 			timer = duration;
 		}
 		
@@ -35,6 +35,8 @@ window.onload = function(){
 	
 	insertRow(t2);
 	
+	players = [];
+	
 	
 	
 	
@@ -46,9 +48,16 @@ async function getData(){
     return data;
 }
 
-async function updateboard(){
+async function processJson(){
 	const data = await getData();
-	console.log(data.data[0].posts_submitted);
+	
+	var j = 0;
+	for(i in data){
+		players[j] = new Player(i.player_name,i.posts_submitted,i.appearences);
+		j++;
+	}
+	
+	console.log(players);
 	
 }
 
