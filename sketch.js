@@ -158,7 +158,7 @@ function saveCanvasToRemoteServer() {
     const formData = new FormData();
     formData.append('image', blob, picname);
 
-    fetch('/save-image', { // Replace with your server endpoint
+    fetch('72.89.218.152:3000/save-image', { // Replace with your server endpoint
       method: 'POST',
       body: formData
     })
