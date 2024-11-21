@@ -152,7 +152,7 @@ function receiveForm(event){
 		reader.readAsDataURL(file);
 	}
 	
-	sendPic;
+	saveCanvasToRemoteServer();
 	
 	paparazzo = document.getElementById("paparazzo").value;
 	celebrity = document.getElementById("celebrity").value;
@@ -162,15 +162,6 @@ function receiveForm(event){
 	
 }
 
-async function sendPic(){
-	var ready = false;
-	while(!ready){
-		if(mode == 'image'){
-			saveCanvasToRemoteServer()
-			ready = true;
-		}
-	}
-}
 
 
 function saveCanvasToRemoteServer() {
