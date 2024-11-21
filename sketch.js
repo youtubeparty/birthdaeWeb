@@ -175,7 +175,7 @@ function saveCanvasToRemoteServer() {
 }
 
 function generateName(){
-	var picname = document.getElementById("header").value + getRandomInt(1000).toString() + ".png";
+	var picname = document.getElementById("header").value.substring(0,4) + getRandomInt(1000).toString() + ".png";
 	
 	console.log(picname);
 	
