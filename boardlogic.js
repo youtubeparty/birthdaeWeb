@@ -13,7 +13,7 @@ function startTimer(duration,display){
 		//taking too long to deploy
 		if(--timer < 0){
 			
-			
+			updateboard();
 			timer = duration;
 		}
 		
@@ -23,7 +23,7 @@ function startTimer(duration,display){
 
 window.onload = function(){
 	var display = document.getElementById('countdown');
-	startTimer(60,display);
+	startTimer(10,display);
 	mode = "clout"
 	
 	var t1 = new Player("fart",2,3);
@@ -45,6 +45,10 @@ async function getData(){
     return data;
 }
 
+async function updateboard(){
+	const response = await getData();
+	console.log(response);
+}
 
 
 function getRandomInt(max) {
