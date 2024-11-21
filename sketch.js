@@ -139,7 +139,7 @@ function receiveForm(event){
 			loadImage(event.target.result, function(loaded) {
 				pic = loaded;
 				mode = 'image';
-				generateName();
+				
 			});
 			
 		};
@@ -174,6 +174,7 @@ function saveCanvasToRemoteServer() {
   });
 }
 
+
 function generateName(){
 	var picname = document.getElementById("header").value.substring(0,4) + getRandomInt(1000).toString() + ".png";
 	
@@ -182,6 +183,7 @@ function generateName(){
 	return picname;
 	
 }
+
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
