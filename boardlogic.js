@@ -25,8 +25,10 @@ window.onload = function(){
 	var t1 = new Player("fart",2,3);
 	var t2 = new Player("Shir",4,5);
 	insertRow(t1);
-	insertRow(t2);
+	
 	clearTable();
+	
+	insertRow(t2);
 	
 	
 }
