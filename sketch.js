@@ -156,7 +156,7 @@ function receiveForm(event){
 
 
 function saveCanvasToRemoteServer() {
-  console.log('sending';)
+  console.log('sending');
   const canvas = document.getElementById('defaultCanvas0'); // Get the canvas element
   canvas.toBlob((blob) => {
     const formData = new FormData();
