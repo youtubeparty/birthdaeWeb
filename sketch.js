@@ -1,4 +1,4 @@
-import { pushData } from "./awsIntegration";
+//import { pushData } from "./awsIntegration";
 
 let charli;
 let logo;
