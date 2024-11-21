@@ -46,7 +46,11 @@ async function getData(){
     return data;
 }
 
-async function processJson(){
+
+
+async function updateBoard(){
+	players = [];
+	
 	const data = await getData();
 	
 	for(let i = 0; i < data.data.length; i++){
@@ -54,13 +58,6 @@ async function processJson(){
 		players[i] = new Player(temp.player_name,temp.posts_submitted,temp.appearances);
 	}
 	
-	console.log(players);
-	
-}
-
-async function updateBoard(){
-	players = [];
-	processJson();
 	
 	
 	if(mode == "clout"){
@@ -68,6 +65,9 @@ async function updateBoard(){
 	}else if(mode == "credit"){
 		sortCredit();
 	}
+	
+	
+	console.log(players);
 	
 	clearTable();
 	
