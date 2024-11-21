@@ -52,12 +52,10 @@ async function processJson(){
 	const data = await getData();
 	
 	
-	var j = 0;
-	for(i in data.data){
-		console.log(i);
-		console.log(i.player_name);
-		players[j] = new Player(i.player_name,i.posts_submitted,i.appearences);
-		j++;
+	
+	for(let i = 0; i < data.data.length; i++){
+		var temp = data.data[i];
+		players[i] = new Player(temp.player_name,temp.posts_submitted,temp.appearences);
 	}
 	
 	console.log(players);
