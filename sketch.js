@@ -148,9 +148,7 @@ function receiveForm(event){
 		reader.readAsDataURL(file);
 	}
 	
-	if(mode=='image'){
-		saveCanvasToRemoteServer();
-	}
+	
 	
 }
 
