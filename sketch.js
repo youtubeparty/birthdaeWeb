@@ -146,7 +146,6 @@ function receiveForm(event){
 		reader.readAsDataURL(file);
 	}
 	
-	save('pic.jpg');
 	
 	
 }
