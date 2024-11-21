@@ -55,7 +55,7 @@ async function processJson(){
 	
 	for(let i = 0; i < data.data.length; i++){
 		var temp = data.data[i];
-		players[i] = new Player(temp.player_name,temp.posts_submitted,temp.appearences);
+		players[i] = new Player(temp.player_name,temp.posts_submitted,temp.appearances);
 	}
 	
 	console.log(players);
