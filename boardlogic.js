@@ -26,6 +26,7 @@ window.onload = function(){
 	var t2 = new Player("Shir",4,5);
 	insertRow(t1);
 	insertRow(t2);
+	clearTable();
 	
 	
 }
@@ -79,4 +80,12 @@ function insertRow(character){
 	}else if(mode == "credit"){
 		scoreCell.textContent = character.socialCredit;
 	}
+}
+
+function clearTable(){
+	var tb = document.getElementById("ranking");
+	while(tb.rows.length > 1){
+		tb.deleteRows(1);
+	}
+	
 }
