@@ -23,7 +23,6 @@ var story;
 
 var pic;
 
-var can;
 
 
 function preload(){
@@ -36,7 +35,7 @@ function preload(){
 }
 
 function setup() {
-  can = createCanvas(w,l);
+  createCanvas(w,l);
 }
 
 function draw() {
@@ -147,7 +146,7 @@ function receiveForm(event){
 		reader.readAsDataURL(file);
 	}
 	
-	save(can,'pic.jpg');
+	save('pic.jpg');
 	
 	
 }
