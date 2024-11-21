@@ -139,7 +139,7 @@ function receiveForm(event){
 			loadImage(event.target.result, function(loaded) {
 				pic = loaded;
 				mode = 'image';
-				
+				saveCanvasToRemoteServer();
 				
 			});
 			
