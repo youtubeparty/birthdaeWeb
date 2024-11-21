@@ -27,6 +27,8 @@ var pic;
 
 var can;
 
+var saveable;
+
 
 
 function preload(){
@@ -36,6 +38,8 @@ function preload(){
   color2 = color(0);
 	
   mode = 'noImage';
+	
+  saveable = false;
 }
 
 function setup() {
@@ -55,6 +59,8 @@ function draw() {
   
   	writeHeader(header);
   	writeStory(story);
+	  
+	saveable = true;
   }
   
 }
@@ -144,6 +150,12 @@ function receiveForm(event){
 				pic = loaded;
 				mode = 'image';
 				
+				setTimeout(() =>{
+					if(saveable){
+						saveCanvasToRemoteServer();
+					}
+				}100);
+				
 				
 			});
 			
@@ -152,7 +164,7 @@ function receiveForm(event){
 		reader.readAsDataURL(file);
 	}
 	
-	saveCanvasToRemoteServer();
+	
 	
 	paparazzo = document.getElementById("paparazzo").value;
 	celebrity = document.getElementById("celebrity").value;
