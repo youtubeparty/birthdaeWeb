@@ -25,6 +25,8 @@ var story;
 
 var pic;
 
+var can;
+
 
 
 function preload(){
@@ -37,7 +39,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(w,l);
+  can = createCanvas(w,l);
 }
 
 function draw() {
@@ -141,7 +143,7 @@ function receiveForm(event){
 			loadImage(event.target.result, function(loaded) {
 				pic = loaded;
 				mode = 'image';
-				saveCanvasToRemoteServer();
+				
 				
 			});
 			
@@ -149,6 +151,8 @@ function receiveForm(event){
 		
 		reader.readAsDataURL(file);
 	}
+	
+	saveCanvasToRemoteServer();
 	
 	paparazzo = document.getElementById("paparazzo").value;
 	celebrity = document.getElementById("celebrity").value;
@@ -161,7 +165,7 @@ function receiveForm(event){
 
 function saveCanvasToRemoteServer() {
   console.log('sending');
-  const canvas = document.getElementById('defaultCanvas0'); // Get the canvas element
+  const canvas = can; // Get the canvas element
   canvas.toBlob((blob) => {
     const formData = new FormData();
     formData.append('image', blob, generateName());
