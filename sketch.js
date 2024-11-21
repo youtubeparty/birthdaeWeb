@@ -23,6 +23,8 @@ var story;
 
 var pic;
 
+var can;
+
 
 function preload(){
   charli = loadImage('charlibbs.JPG');
@@ -34,7 +36,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(w,l);
+  can = createCanvas(w,l);
 }
 
 function draw() {
@@ -145,6 +147,7 @@ function receiveForm(event){
 		reader.readAsDataURL(file);
 	}
 	
+	save(can,'pic.jpg');
 	
 	
 }
