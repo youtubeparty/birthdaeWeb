@@ -1,7 +1,7 @@
 //import { getData } from "./awsIntegration";
 
 var mode;
-var 
+var players;
 
 function startTimer(duration,display){
 	var timer = duration;
