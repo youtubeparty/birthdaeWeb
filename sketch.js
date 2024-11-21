@@ -126,7 +126,7 @@ function writeStory(txt){
   
 }
 
-function receiveForm(event){
+async function receiveForm(event){
 	
 	event.preventDefault();
 	
@@ -152,7 +152,7 @@ function receiveForm(event){
 		reader.readAsDataURL(file);
 	}
 	
-	saveCanvasToRemoteServer();
+	await saveCanvasToRemoteServer();
 	
 	paparazzo = document.getElementById("paparazzo").value;
 	celebrity = document.getElementById("celebrity").value;
