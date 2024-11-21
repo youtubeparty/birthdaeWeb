@@ -42,7 +42,7 @@ window.onload = function(){
 
 async function getData(){
     const response = await fetch('https://h0fkejytf5.execute-api.us-east-1.amazonaws.com/get_birthdae_rankings');
-    const data = response.json();
+    const data = await response.json();
     return data;
 }
 
