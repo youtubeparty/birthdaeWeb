@@ -48,8 +48,8 @@ async function getData(){
 
 async function updateboard(){
 	const data = await getData();
-	const jsData = JSON.parse(data);
-	console.log(jsData);
+	
+	console.log(data);
 }
 
 
