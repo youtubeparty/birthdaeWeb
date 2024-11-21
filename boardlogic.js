@@ -32,6 +32,8 @@ window.onload = function(){
 	
 	insertRow(t2);
 	
+	console.log(getData());
+	
 	
 }
 
