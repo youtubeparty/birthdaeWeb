@@ -80,13 +80,13 @@ async function updateBoard(){
 
 function sortClout(){
 	players.sort(function(a,b){
-		return a.clout - b.clout;
+		return b.clout - a.clout;
 	});
 }
 
 function sortCredit(){
 	players.sort(function(a,b){
-		return a.socialCredit - b.socialCredit;
+		return b.socialCredit - a.socialCredit;
 	});
 }
 
