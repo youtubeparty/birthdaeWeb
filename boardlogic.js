@@ -48,8 +48,9 @@ async function getData(){
 
 async function updateboard(){
 	const data = await getData();
-	
-	console.log(data);
+	console.log(data[0]);
+	console.log(data[1]);
+	console.log(data[2]);
 }
 
 
