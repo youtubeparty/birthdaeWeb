@@ -150,12 +150,12 @@ function receiveForm(event){
 				pic = loaded;
 				mode = 'image';
 				
-				setTimeout(() =>{
-					if(saveable){
-						saveCanvasToRemoteServer();
-					}
-				},100);
-				
+				//setTimeout(() =>{
+					//if(saveable){
+						
+					//}
+				//},100);
+				sendPic();
 				
 			});
 			
@@ -172,6 +172,11 @@ function receiveForm(event){
 	
 	
 	
+}
+
+async function sendPic(){
+	while(!saveable){}
+	saveCanvasToRemoteServer();
 }
 
 async function pushData(paparazzo, celebrity){
