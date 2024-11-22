@@ -47,9 +47,10 @@ function preload(){
 function setup() {
   can = createCanvas(w,l);
   canvas = document.getElementById('defaultCanvas0'); // Get the canvas element
-  //canvas.width = w;
-  //canvas.height = l;
-  resizeCanvas(800,800);
+  canvas.width = w;
+  canvas.height = l;
+  resizeCanvas(l,w);
+  
 }
 
 function draw() {
