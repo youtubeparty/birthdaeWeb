@@ -25,17 +25,10 @@ function startTimer(duration,display){
 window.onload = function(){
 	var display = document.getElementById('countdown');
 	startTimer(10,display);
-	mode = "clout"
-	
-	var t1 = new Player("fart",2,3);
-	var t2 = new Player("Shir",4,5);
-	insertRow(t1);
-	
-	clearTable();
-	
-	insertRow(t2);
-	
+	mode = "credit"
 	players = [];
+	
+	modeSwitch();
 		
 	
 }
@@ -75,6 +68,21 @@ async function updateBoard(){
 		insertRow(players[i]);
 	}
 	
+}
+
+function modeSwitch(){
+	if(mode == "clout"){
+		document.getElementById("people").textContent = "CELEBS";
+		document.getElementById("stories").textContent = "STORIES WRITTEN";
+		document.getElementById("roles").textContent = "STARRING ROLES";
+		document.getElementById("clout").textContent = "ADJUSTED CLOUT VALUE";
+		
+	}else if(mode == "value"){
+		document.getElementById("people").textContent = "CITIZENS";
+		document.getElementById("stories").textContent = "INCIDENTS REPORTED";
+		document.getElementById("roles").textContent = "INFRACTIONS";
+		document.getElementById("clout").textContent = "SOCIAL CREDIT SCORE";
+	}
 }
 
 
