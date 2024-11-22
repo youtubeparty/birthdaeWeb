@@ -29,6 +29,7 @@ window.onload = function(){
 	players = [];
 	
 	modeSwitch();
+	updateBoard();
 		
 	
 }
