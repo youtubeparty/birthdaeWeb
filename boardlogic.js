@@ -24,7 +24,7 @@ function startTimer(duration,display){
 
 window.onload = function(){
 	var display = document.getElementById('countdown');
-	startTimer(60,display);
+	startTimer(10,display);
 	mode = "clout"
 	players = [];
 	
