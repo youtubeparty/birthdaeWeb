@@ -15,7 +15,7 @@ const X_AXIS = 2;
 let color1;
 let color2;
 
-let tSize = 40;
+let tSize = 30;
 
 var mode;
 
