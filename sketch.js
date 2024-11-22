@@ -174,7 +174,8 @@ function receiveForm(event){
 	pushData(paparazzo, celebrity);
 	
 	
-	
+	document.getElementById("gossipInfo").reset();
+	saveable = false;
 	
 	
 }
