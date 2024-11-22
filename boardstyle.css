@@ -16,3 +16,20 @@ body{
 	text-align: center;
 }
 
+
+.player{
+	text-align: center;
+}
+
+#categories{
+	padding: 1%;
+	margin: 4%;
+}
+
+table{
+	border-style: dashed;
+}
+
+tr:nth-child(even){
+	background-color: #f2f2f2;
+}
