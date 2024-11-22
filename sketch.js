@@ -176,7 +176,7 @@ function receiveForm(event){
 
 async function sendPic(){
 	while(!saveable){}
-	saveCanvasToRemoteServer();
+	await saveCanvasToRemoteServer();
 }
 
 async function pushData(paparazzo, celebrity){
