@@ -29,7 +29,7 @@ var can;
 
 var saveable;
 
-let canvas;
+
 
 
 
@@ -46,10 +46,7 @@ function preload(){
 
 function setup() {
   can = createCanvas(w,l);
-  canvas = document.getElementById('defaultCanvas0'); // Get the canvas element
-  canvas.width = w;
-  canvas.height = l;
-  resizeCanvas(l,w);
+  
   
 }
 
@@ -195,6 +192,7 @@ async function pushData(paparazzo, celebrity){
 function saveCanvasToRemoteServer() {
   console.log('sending');
   
+	const canvas = document.getElementById('defaultCanvas0');
 	
   canvas.toBlob((blob) => {
     console.log('blob size: ' + blob.size);
