@@ -29,10 +29,17 @@ select{
 
 main{
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 canvas{
 	border-style: dashed;
 	border-color: black;
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	
 }
