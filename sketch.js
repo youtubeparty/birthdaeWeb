@@ -29,8 +29,6 @@ var can;
 
 var saveable;
 
-var isPicUpdated = false;
-
 
 
 function preload(){
@@ -53,7 +51,7 @@ function draw() {
   if (mode == 'noImage'){
 	  
   }else if(mode =='image'){
-	setBackgroundImage(pic);
+	  setBackgroundImage(pic);
   
   	setGradient(0,l-(l/3),w,l/3,color1,color2,Y_AXIS); 
   
@@ -62,8 +60,7 @@ function draw() {
   	writeHeader(header);
   	writeStory(story);
 	  
-    console.log('picUpdated: ' + isPicUpdated);
-	saveable = true;
+	  saveable = true;
   }
   
 }
@@ -151,9 +148,7 @@ function receiveForm(event){
 		
 		reader.onload = function (event){
 			loadImage(event.target.result, function(loaded) {
-        console.log('pic loaded');
 				pic = loaded;
-        isPicUpdated = true;
         console.log('var pic = loaded');
 				mode = 'image';
 				
