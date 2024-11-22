@@ -71,6 +71,7 @@ async function updateBoard(){
 }
 
 function modeSwitch(){
+	console.log("fart");
 	if(mode == "clout"){
 		document.getElementById("people").textContent = "CELEBS";
 		document.getElementById("stories").textContent = "STORIES WRITTEN";
