@@ -128,11 +128,12 @@ function writeStory(txt){
   textFont('Helvetica');
   textStyle(BOLD);
   textSize(tSize);
+  textWrap(CHAR);
   textAlign(CENTER);
   fill(color1);
   noStroke();
   
-  text(txt,w/2,l*(13/16));
+  text(txt,w/2,l*(13/16),400);
   
 }
 
