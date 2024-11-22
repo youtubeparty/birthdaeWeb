@@ -133,7 +133,7 @@ function writeStory(txt){
   fill(color1);
   noStroke();
   
-  text(txt,w/2,l*(13/16),400);
+  text(txt,w/2,l*(13/16),100);
   
 }
 
