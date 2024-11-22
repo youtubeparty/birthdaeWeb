@@ -131,49 +131,77 @@ function writeStory(txt){
   text(txt,w/2,l*(13/16));
   
 }
-
-function receiveForm(event){
-	
-	event.preventDefault();
-	
-	header = document.getElementById('header').value;
-	
-	story = document.getElementById('caption').value.toUpperCase();
-	
-	const file = document.getElementById('picture').files[0];
-	
-	if (file){
-		const reader = new FileReader();
-		
-		reader.onload = function (event){
-			loadImage(event.target.result, function(loaded) {
-				pic = loaded;
-				mode = 'image';
-				
-				setTimeout(() =>{
-					if(saveable){
-						saveCanvasToRemoteServer();
-					}
-				},6000);
-				sendPic();
-				
-			});
-			
-		};
-		
-		reader.readAsDataURL(file);
-	}
-	
-	
-	
-	paparazzo = document.getElementById("paparazzo").value;
-	celebrity = document.getElementById("celebrity").value;
-	pushData(paparazzo, celebrity);
-	
-	
-	
+function convertHEICToJPEG(file, callback) {
+    heic2any({
+        blob: file,
+        toType: "image/jpeg",
+        quality: 0.8 // Adjust quality (0 to 1)
+    })
+        .then((convertedBlob) => {
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                callback(event.target.result); // Pass the JPEG data URL to the callback
+            };
+            reader.readAsDataURL(convertedBlob);
+        })
+        .catch((error) => {
+            console.error("Error converting HEIC to JPEG:", error);
+        });
 }
 
+
+
+function receiveForm(event) {
+    event.preventDefault();
+
+    header = document.getElementById('header').value;
+    story = document.getElementById('caption').value.toUpperCase();
+
+    const file = document.getElementById('picture').files[0];
+
+    if (file) {
+        // Check if the uploaded file is a HEIC image
+        if (file.type === 'image/heic') {
+            console.log("HEIC image detected, converting to JPEG...");
+            convertHEICToJPEG(file, (jpegDataURL) => {
+                loadImage(jpegDataURL, function (loaded) {
+                    pic = loaded;
+                    mode = 'image';
+
+                    setTimeout(() => {
+                        if (saveable) {
+                            saveCanvasToRemoteServer();
+                        }
+                    }, 6000);
+
+                    sendPic();
+                });
+            });
+        } else {
+            // Process non-HEIC images as before
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                loadImage(event.target.result, function (loaded) {
+                    pic = loaded;
+                    mode = 'image';
+
+                    setTimeout(() => {
+                        if (saveable) {
+                            saveCanvasToRemoteServer();
+                        }
+                    }, 6000);
+
+                    sendPic();
+                });
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+    paparazzo = document.getElementById("paparazzo").value;
+    celebrity = document.getElementById("celebrity").value;
+    pushData(paparazzo, celebrity);
+}
 
 
 async function pushData(paparazzo, celebrity){
