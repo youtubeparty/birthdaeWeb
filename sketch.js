@@ -3,8 +3,8 @@
 let charli;
 let logo;
 
-let l = 600;
-let w = 600;
+let l = 800;
+let w = 800;
 
 let wMod = w/6;
 let lMod = l/6;
@@ -188,6 +188,9 @@ async function pushData(paparazzo, celebrity){
 function saveCanvasToRemoteServer() {
   console.log('sending');
   const canvas = document.getElementById('defaultCanvas0'); // Get the canvas element
+	canvas.width = w;
+	canvas.height = l;;
+	
   canvas.toBlob((blob) => {
     console.log('blob size: ' + blob.size);
     const formData = new FormData();
