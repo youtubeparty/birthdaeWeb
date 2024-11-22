@@ -60,7 +60,6 @@ async function updateBoard(){
 	}
 	
 	
-	console.log(players);
 	
 	clearTable();
 	
@@ -71,14 +70,14 @@ async function updateBoard(){
 }
 
 function modeSwitch(){
-	console.log("fart");
+	
 	if(mode == "clout"){
 		document.getElementById("people").textContent = "CELEBS";
 		document.getElementById("stories").textContent = "STORIES WRITTEN";
 		document.getElementById("roles").textContent = "STARRING ROLES";
 		document.getElementById("clout").textContent = "ADJUSTED CLOUT VALUE";
 		
-	}else if(mode == "value"){
+	}else if(mode == "credit"){
 		document.getElementById("people").textContent = "CITIZENS";
 		document.getElementById("stories").textContent = "INCIDENTS REPORTED";
 		document.getElementById("roles").textContent = "INFRACTIONS";
