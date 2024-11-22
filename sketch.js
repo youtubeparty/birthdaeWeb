@@ -172,7 +172,7 @@ function receiveForm(event) {
                         if (saveable) {
                             saveCanvasToRemoteServer();
                         }
-                    }, 100);
+                    }, 1000);
 
                     
                 });
@@ -189,7 +189,7 @@ function receiveForm(event) {
                         if (saveable) {
                             saveCanvasToRemoteServer();
                         }
-                    }, 100);
+                    }, 1000);
 
                     
                 });
