@@ -174,7 +174,7 @@ function receiveForm(event) {
                         }
                     }, 100);
 
-                    sendPic();
+                    
                 });
             });
         } else {
@@ -191,7 +191,7 @@ function receiveForm(event) {
                         }
                     }, 100);
 
-                    sendPic();
+                    
                 });
             };
             reader.readAsDataURL(file);
