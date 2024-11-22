@@ -188,8 +188,8 @@ async function pushData(paparazzo, celebrity){
 function saveCanvasToRemoteServer() {
   console.log('sending');
   const canvas = document.getElementById('defaultCanvas0'); // Get the canvas element
-	canvas.width = w;
-	canvas.height = l;;
+  canvas.width = w;
+  canvas.height = l;
 	
   canvas.toBlob((blob) => {
     console.log('blob size: ' + blob.size);
