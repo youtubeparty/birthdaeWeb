@@ -148,6 +148,7 @@ function receiveForm(event){
 		
 		reader.onload = function (event){
 			loadImage(event.target.result, function(loaded) {
+        console.log('pic loaded');
 				pic = loaded;
 				mode = 'image';
 				
