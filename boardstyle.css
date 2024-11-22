@@ -28,6 +28,7 @@ body{
 
 table{
 	border-style: dashed;
+	border-color: black;
 }
 
 tr:nth-child(even){
