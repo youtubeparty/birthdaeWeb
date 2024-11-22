@@ -29,6 +29,8 @@ var can;
 
 var saveable;
 
+var isPicUpdated = false;
+
 
 
 function preload(){
@@ -60,6 +62,7 @@ function draw() {
   	writeHeader(header);
   	writeStory(story);
 	  
+    console.log('picUpdated: ' + isPicUpdated);
 	saveable = true;
   }
   
@@ -150,6 +153,8 @@ function receiveForm(event){
 			loadImage(event.target.result, function(loaded) {
         console.log('pic loaded');
 				pic = loaded;
+        isPicUpdated = true;
+        console.log('var pic = loaded');
 				mode = 'image';
 				
 				setTimeout(() =>{
