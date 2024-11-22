@@ -150,11 +150,11 @@ function receiveForm(event){
 				pic = loaded;
 				mode = 'image';
 				
-				//setTimeout(() =>{
-					//if(saveable){
-						
-					//}
-				//},100);
+				setTimeout(() =>{
+					if(saveable){
+						saveCanvasToRemoteServer();
+					}
+				},1000);
 				sendPic();
 				
 			});
@@ -174,10 +174,7 @@ function receiveForm(event){
 	
 }
 
-async function sendPic(){
-	while(!saveable){}
-	await saveCanvasToRemoteServer();
-}
+
 
 async function pushData(paparazzo, celebrity){
     const url = "https://upmfm7yzu2.execute-api.us-east-1.amazonaws.com/publish_to_birthdae?" + new URLSearchParams({
