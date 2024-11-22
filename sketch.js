@@ -3,8 +3,8 @@
 let charli;
 let logo;
 
-let l = 800;
-let w = 800;
+let l = 600;
+let w = 600;
 
 let wMod = w/6;
 let lMod = l/6;
