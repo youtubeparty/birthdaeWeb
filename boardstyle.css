@@ -25,6 +25,33 @@ body{
 	text-align: center;
 }
 
+
+.container {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+.scrolling-link {
+	white-space: nowrap;
+	margin: 0 2em
+}
+
+.scrolling-link div {
+	display: flex;
+	gap: 2em;
+	animation: RightToLeft 10s infinite linear;
+}
+
+@keyframes  RightToLeft {
+	from {
+	  transform: translateX(0%);
+	}
+	to {
+	  transform: translateX(-50%);
+	}
+}
+
 #categories{
 	padding: 1%;
 	margin: 4%;
