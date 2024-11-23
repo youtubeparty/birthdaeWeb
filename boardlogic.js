@@ -25,7 +25,7 @@ function startTimer(duration,display){
 window.onload = function(){
 	var display = document.getElementById('countdown');
 	startTimer(10,display);
-	mode = "clout"
+	mode = "credit"
 	players = [];
 	
 	modeSwitch();
