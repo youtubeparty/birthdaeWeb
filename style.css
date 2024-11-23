@@ -14,6 +14,32 @@ canvas {
 	
 }
 
+.container {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+.scroll-text {
+	white-space: nowrap;
+	margin: 0 2em
+}
+
+.scroll-text div {
+	display: flex;
+	gap: 2em;
+	animation: RightToLeft 10s infinite linear;
+}
+
+@keyframes  RightToLeft {
+	from {
+	  transform: translateX(0%);
+	}
+	to {
+	  transform: translateX(-50%);
+	}
+}
+
 form{
 	margin: 5%;
 	padding: 5%;
