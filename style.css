@@ -20,12 +20,12 @@ canvas {
 	overflow: hidden;
 }
 
-.scroll-text {
+.scrolling-link {
 	white-space: nowrap;
 	margin: 0 2em
 }
 
-.scroll-text div {
+.scrolling-link div {
 	display: flex;
 	gap: 2em;
 	animation: RightToLeft 10s infinite linear;
